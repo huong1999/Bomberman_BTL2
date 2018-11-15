@@ -1,0 +1,7 @@
+270:173:3:4:10:2500:/Images/boss_down.png
+135:90:2:4:10:1:/Images/monster_down.png
+180:90:2:4:10:1:/Images/monster_down.png
+360:90:2:4:10:1:/Images/monster_down.png
+405:90:2:4:10:1:/Images/monster_down.png
+450:90:2:4:10:1:/Images/monster_down.png
+495:90:2:4:10:1:/Images/monster_down.png
