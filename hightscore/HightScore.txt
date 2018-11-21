@@ -1,0 +1,10 @@
+huong:5
+huongdo:2
+huong:2
+huong:1
+huong:1
+huong:0
+huong:0
+huong:0
+huongdo:0
+huogdo:0
