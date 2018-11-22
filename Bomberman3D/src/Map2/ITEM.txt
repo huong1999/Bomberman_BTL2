@@ -1,0 +1,6 @@
+360:45:1:/Images/item_bomb.png
+405:540:1:/Images/item_bomb.png
+225:540:2:/Images/item_bombsize.png
+585:225:2:/Images/item_bombsize.png
+585:405:3:/Images/item_shoe.png
+270:495:3:/Images/item_shoe.png
