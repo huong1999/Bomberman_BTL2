@@ -15,7 +15,7 @@ public class BombBang {
 		this.x=x;
 		this.y=y;
 		this.size=size;
-		this.timeLine = 250;
+		this.timeLine = 120;
 		img_left = new ImageIcon(getClass().getResource("/Images/bombbang_left_1.png")).getImage();
 		img_right = new ImageIcon(getClass().getResource("/Images/bombbang_right_1.png")).getImage();
 		img_up = new ImageIcon(getClass().getResource("/Images/bombbang_up_1.png")).getImage();
@@ -23,18 +23,19 @@ public class BombBang {
 		for(int i=1;i<size;i++){
 			int tmp_left=0, tmp_right=0 ,tmp_up=0 ,tmp_dow=0 ;
 			for(int j=0;j<arrBox.size();j++){
-				if(isImpactBox(x-(i)*45, y, (i+1)*45, 45, arrBox.get(j))){
+				if(isImpactBox(x-45, y, 45, 45, arrBox.get(j))){
 					tmp_left=1;
 				}
-				if(isImpactBox(x, y, (i+1)*45, 45, arrBox.get(j))){
+				if(isImpactBox(x, y+45, 45, 45, arrBox.get(j))){
 					tmp_right=1;
 				}
-				if(isImpactBox(x, y-(i*45), 45, (i+1)*45, arrBox.get(j))){
+				if(isImpactBox(x, y-45, 45, 45, arrBox.get(j))){
 					tmp_up=1;
 				}
-				if(isImpactBox(x, y, 45, (i+1)*45, arrBox.get(j))){
+				if(isImpactBox(x, y+45, 45, 45, arrBox.get(j))){
 					tmp_dow=1;
 				}
+	
 			}
 			if(tmp_left==0){
 				setImage(Bomber.LEFT, i+1);
