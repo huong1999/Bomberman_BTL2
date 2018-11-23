@@ -45,7 +45,6 @@ public class Manager {
 			case 1:
 				mBomber = new Bomber(0, 540, Actor.BOMBER, Actor.DOWN, 5, 1, 1);
 				innit("src/Map1/BOX.txt",
-						"src/Map1/SHADOW.txt",
 						"src/Map1/MONSTER.txt",
 						"src/Map1/ITEM.txt");
 				nextRound = 0;
@@ -53,7 +52,7 @@ public class Manager {
 				break;
 			case 2:
 				mBomber.setNewStatusBomber(315, 270);
-				innit("src/Map2/BOX.txt", "src/Map2/SHADOW.txt",
+				innit("src/Map2/BOX.txt",
 						"src/Map2/MONSTER.txt", "src/Map2/ITEM.txt");
 				nextRound = 0;
 				status = 0;
@@ -61,7 +60,6 @@ public class Manager {
 			case 3:
 				mBomber.setNewStatusBomber(315, 495);
 				innit("src/Map3/BOX.txt",
-						"src/Map3/SHADOW.txt",
 						"src/Map3/MONSTER.txt",
 						"src/Map3/ITEM.txt");
 				nextRound = 0;
@@ -74,9 +72,9 @@ public class Manager {
 
 	}
 
-	public void innit(String pathBox, String pathShawdow, String pathSprite,String pathItem) {
+	public void innit(String pathBox, String pathSprite,String pathItem) {
 		arrBox = new ArrayList<Box>();
-		arrShawDow = new ArrayList<Box>();
+		
 		arrBomb = new ArrayList<Bomb>();
 		arrBombBang = new ArrayList<BombBang>();
 		arrSprite = new ArrayList<Sprite>();
@@ -84,14 +82,14 @@ public class Manager {
 		arrItem = new ArrayList<Item>();
 		arrHightScore = new ArrayList<HightScore>();
 
-		innitArrBoxAndShawdow(pathBox, pathShawdow);
+		innitArrBoxAndShawdow(pathBox);
 		initarrSprite(pathSprite);
 		initArrItem(pathItem);
 		initArrHightScore("src/hightscore/HightScore.txt");
 	}
 
 
-	public void innitArrBoxAndShawdow(String pathBox, String pathShadow) {
+	public void innitArrBoxAndShawdow(String pathBox) {
 		try {
 			BufferedReader input = new BufferedReader(new FileReader(pathBox));
 			Background = input.readLine();
@@ -111,23 +109,7 @@ public class Manager {
 			e.printStackTrace();
 		}
 
-		try {
-			BufferedReader inputShawDow = new BufferedReader(new FileReader(pathShadow));
-			String line;
-			while ((line = inputShawDow.readLine()) != null) {
-				String str[] = line.split(":");
-				int x = Integer.parseInt(str[0]);
-				int y = Integer.parseInt(str[1]);
-				int type = Integer.parseInt(str[2]);
-				String images = str[3];
-				Box box = new Box(x, y, type, images);
-				arrShawDow.add(box);
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 	public void initBomb() {
@@ -219,10 +201,6 @@ public class Manager {
 		}
 	}
 
-	public void drawAllShawDow(Graphics2D g2d) {
-		for (int i = 0; i < arrShawDow.size(); i++) {
-			arrShawDow.get(i).drawBox(g2d);
-		}
 	}
 
 	public void draWBackground(Graphics2D g2d) {
@@ -483,7 +461,7 @@ public class Manager {
 			for (int j = 0; j < arrBox.size(); j++) {
 				if (arrBombBang.get(i).isImpactBombBangvsBox(arrBox.get(j))) {
 					arrBox.remove(j);
-					arrShawDow.remove(j);
+					
 				}
 			}
 		}
@@ -501,7 +479,7 @@ public class Manager {
 	public void setNewBomber() {
 		switch (level) {
 			case 1:
-				mBomber.setNewStatusBomber(0, 540);
+				mBomber.setNewStatusBomber(315, 495);
 				break;
 			case 2:
 				mBomber.setNewStatusBomber(315, 270);
