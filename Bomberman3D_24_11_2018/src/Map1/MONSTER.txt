@@ -3,6 +3,6 @@
 585:45:2:3:5:1:/Images/monster_down.png
 585:495:2:3:5:1:/Images/monster_down.png
 180:180:5:3:5:1:/Images/soot_down.png
-180:315:5:4:5:1:/Images/soot_down.png
+180:315:2:4:5:1:/Images/monster_down.png
 360:180:5:3:5:1:/Images/soot_down.png
-360:315:5:3:5:1:/Images/soot_down.png
+360:315:2:3:5:1:/Images/monster_down.png
