@@ -330,10 +330,11 @@ public class Manager {
 				level = 1;
 				return;
 			}
-			if (arrItem.get(0).isImpactItemVsBomber(mBomber)) {
+			if (checkImpactpt()) {
 				level++;
 				nextRound++;
 				status = 2;
+                                 
 			}
 		}
 
@@ -341,18 +342,21 @@ public class Manager {
 	public void checkImpactItem() {
 		for (int i = 0; i < arrItem.size(); i++) {
 			if (arrItem.get(i).isImpactItemVsBomber(mBomber)) {
-				GameSound.instance.getAudio(GameSound.ITEM).play();
+				
 				if (arrItem.get(i).getType() == 1) {
+                                    GameSound.instance.getAudio(GameSound.ITEM).play();
 					mBomber.setQuantityBomb(mBomber.getQuantityBomb() + 1);
 					arrItem.remove(i);
 					break;
 				}
 				if (arrItem.get(i).getType() == 2) {
+                                    GameSound.instance.getAudio(GameSound.ITEM).play();
 					mBomber.setSizeBomb(mBomber.getSizeBomb() + 1);
 					arrItem.remove(i);
 					break;
 				}
 				if (arrItem.get(i).getType() == 3) {
+                                    GameSound.instance.getAudio(GameSound.ITEM).play();
 					mBomber.setSpeed(mBomber.getSpeed() - 1);
 					arrItem.remove(i);
 					break;
@@ -367,7 +371,19 @@ public class Manager {
 			}
 		}
 	}
-
+  public boolean checkImpactpt(){
+            int i = 0;
+            for ( i = 0; i < arrItem.size(); i++) {
+                if (arrItem.get(i).getType() == 4 && arrItem.get(i).isImpactItemVsBomber(mBomber)){
+                    arrItem.remove(i);
+                    return true;
+                     
+                }
+            }     
+              
+                 return false;
+           
+        }
 //	public void checkImpactItem() {
 //		for (int i = 0; i < arrItem.size(); i++) {
 //			if (arrItem.get(i).isImpactItemVsBomber(mBomber)) {
