@@ -1,0 +1,8 @@
+135:405:6:3:5:1:/Images/pirate_down.png
+495:405:6:3:5:1:/Images/pirate_down.png
+360:315:5:3:10:1:/Images/soot_down.png
+90:540:5:3:10:1:/Images/soot_down.png
+0:0:2:3:10:1:/Images/monster_down.png
+495:540:2:3:10:1:/Images/monster_down.png
+630:0:2:3:10:1:/Images/monster_down.png
+90:135:2:3:10:1:/Images/monster_down.png
