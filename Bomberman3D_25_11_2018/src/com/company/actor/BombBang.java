@@ -77,7 +77,21 @@ public class BombBang {
 		}
 		return false;
 	}
-	
+	  public boolean isImpactBombBangvsItem(Item itm) {
+
+        Rectangle rec1 = new Rectangle(x + 45 - img_left.getWidth(null), y, img_left.getWidth(null), img_left.getHeight(null));
+        Rectangle rec2 = new Rectangle(x, y, img_right.getWidth(null), img_right.getHeight(null));
+        Rectangle rec3 = new Rectangle(x, y + 45 - img_up.getHeight(null), img_up.getWidth(null), img_up.getHeight(null));
+        Rectangle rec4 = new Rectangle(x, y, img_down.getWidth(null), img_down.getHeight(null));
+        Rectangle rec5 = new Rectangle(itm.getX(), itm.getY(), itm.getWidth(), itm.getHeight());
+
+        if (rec1.intersects(rec5) || rec2.intersects(rec5) || rec3.intersects(rec5) || rec4.intersects(rec5)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 	public boolean isImpactBombBangvsBomb(Bomb bomb){
 		Rectangle rec1 = new Rectangle(x+45-img_left.getWidth(null), y, img_left.getWidth(null), img_left.getHeight(null));
 		Rectangle rec2 = new Rectangle(x, y, img_right.getWidth(null), img_right.getHeight(null));
