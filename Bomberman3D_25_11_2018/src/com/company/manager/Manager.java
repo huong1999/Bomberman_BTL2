@@ -366,7 +366,7 @@ public class Manager {
   public boolean checkImpactpt(){
             int i = 0;
             for ( i = 0; i < arrItem.size(); i++) {
-                if (arrItem.get(i).getType() == 4 && arrItem.get(i).isImpactItemVsBomber(mBomber)){
+                if (arrItem.get(i).getType() == 4 && arrItem.get(i).isImpactItemVsBomber(mBomber) && arrSprite.isEmpty()){
                     arrItem.remove(i);
                     return true;
                 }
