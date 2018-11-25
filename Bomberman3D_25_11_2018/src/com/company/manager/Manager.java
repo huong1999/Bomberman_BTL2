@@ -328,41 +328,63 @@ public class Manager {
 
 	}
 	public void checkImpactItem() {
-		for (int i = 0; i < arrItem.size(); i++) {
-			if (arrItem.get(i).isImpactItemVsBomber(mBomber)) {
-				
-				if (arrItem.get(i).getType() == 1) {
-                                    GameSound.instance.getAudio(GameSound.ITEM).play();
-					mBomber.setQuantityBomb(mBomber.getQuantityBomb() + 1);
+        for (int i = 0; i < arrItem.size(); i++) {
+            if (arrItem.get(i).isImpactItemVsBomber(mBomber)) {
+
+                if (arrItem.get(i).getType() == 1) {                    // them so luong bom
+                    GameSound.instance.getAudio(GameSound.ITEM).play();
+                    mBomber.setQuantityBomb(mBomber.getQuantityBomb() + 1);
+                    arrItem.remove(i);
+                    break;
+                }
+                if (arrItem.get(i).getType() == 2) {                // tang kich co bom
+                    GameSound.instance.getAudio(GameSound.ITEM).play();
+                    mBomber.setSizeBomb(mBomber.getSizeBomb() + 1);
+                    arrItem.remove(i);
+                    break;
+                }
+                if (arrItem.get(i).getType() == 3) {                //tang toc do bomber
+                    GameSound.instance.getAudio(GameSound.ITEM).play();
+                    mBomber.setSpeed(mBomber.getSpeed() - 1);
+                    arrItem.remove(i);
+                    break;
+                }
+                if (arrItem.get(i).getType() == 5) {                // them mang neu mang < 3
+                    GameSound.instance.getAudio(GameSound.ITEM).play();
+                    arrItem.remove(i);
+
+                    if (mBomber.getHeart() < 3) {
+                        mBomber.setHeart(mBomber.getHeart() + 1);
+                    }
+
+                    break;
+                }
+                if (arrItem.get(i).getType() == 6) {                // bẫy skull -> mất mạng
+
+                    arrItem.remove(i);
+
+                    Image icon = new ImageIcon(getClass().getResource("/Images/ghost.png")).getImage();
+                    mBomber.setImg(icon);
+                    if (mBomber.getStatus() == Bomber.DEAD) {			//nếu bomber đã die thì sau va chạm tiếp giữa bomber và sprite sẽ ko die tiếp nữa
+                        return;
+                    }
+                    mBomber.setHeart(mBomber.getHeart() - 1);		//giảm mạng
+                    mBomber.setStatus(Bomber.DEAD);
+                    GameSound.instance.getAudio(GameSound.BOMBER_DIE).play();
+
+                    break;
+                }
+                /*//logic portal
+				if (arrItem.get(i).getType() == Item.Item_Portal) {
+					//mBomber.setSpeed(mBomber.getSpeed() - 1);
 					arrItem.remove(i);
 					break;
 				}
-				if (arrItem.get(i).getType() == 2) {
-                                    GameSound.instance.getAudio(GameSound.ITEM).play();
-					mBomber.setSizeBomb(mBomber.getSizeBomb() + 1);
-					arrItem.remove(i);
-					break;
-				}
-				if (arrItem.get(i).getType() == 3) {
-                                    GameSound.instance.getAudio(GameSound.ITEM).play();
-					mBomber.setSpeed(mBomber.getSpeed() - 1);
-					arrItem.remove(i);
-					break;
-				}
-				if (arrItem.get(i).getType() == 5) {
-                    			GameSound.instance.getAudio(GameSound.ITEM).play();
-                    			arrItem.remove(i);
+                 */
+            }
+        }
+    }
 
-                    			if (mBomber.getHeart() < 3) {
-                        			mBomber.setHeart(mBomber.getHeart() + 1);
-                   			 }
-
-                    				break;
-               			 }
-
-			}
-		}
-	}
 	//logic portal
   public boolean checkImpactpt(){
             int i = 0;
