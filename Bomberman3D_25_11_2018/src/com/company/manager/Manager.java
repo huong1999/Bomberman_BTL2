@@ -493,7 +493,7 @@ public class Manager {
 				}
 			}
 		}
-		/*//item_portal
+		
 		for (int i = 0; i < arrBombBang.size(); i++) {
 			for (int j = 0; j < arrItem.size(); j++) {
 				if (arrBombBang.get(i).isImpactBombBangvsItem(arrItem.get(j))) {
@@ -501,7 +501,7 @@ public class Manager {
 				}
 			}
 		}
-		*/
+		
 	}
 
 	public void setNewBomber() {
