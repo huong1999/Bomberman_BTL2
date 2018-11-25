@@ -1,4 +1,5 @@
 0:0:4:/Images/portal.png
+450:450:5:/Images/heart_1.png
 540:540:1:/Images/item_bomb.png
 135:540:2:/Images/item_bombsize.png
 180:135:3:/Images/item_shoe.png
