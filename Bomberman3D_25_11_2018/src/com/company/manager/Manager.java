@@ -214,18 +214,9 @@ public class Manager {
 		g2d.drawImage(imgInfor, 675, 0, null);
 		g2d.drawString("YOUR HEART", 726, 100);
 		Image heart = new ImageIcon(getClass().getResource("/Images/heart_1.png")).getImage();
-		if (mBomber.getHeart() == 3) {
-			g2d.drawImage(heart, 750, 120, null);
-			g2d.drawImage(heart, 775, 120, null);
-			g2d.drawImage(heart, 800, 120, null);
-		}
-		if (mBomber.getHeart() == 2) {
-			g2d.drawImage(heart, 760, 120, null);
-			g2d.drawImage(heart, 790, 120, null);
-		}
-		if (mBomber.getHeart() == 1) {
-			g2d.drawImage(heart, 775, 120, null);
-		}
+		for (int i = 0; i < mBomber.getHeart(); i++) {
+            		g2d.drawImage(heart, 750 + i * 25, 120, null);
+        	}
 
 		g2d.drawString("SCORE : " + mBomber.getScore(), 740, 200);
 	}
@@ -358,6 +349,16 @@ public class Manager {
 					arrItem.remove(i);
 					break;
 				}
+				if (arrItem.get(i).getType() == 5) {
+                    			GameSound.instance.getAudio(GameSound.ITEM).play();
+                    			arrItem.remove(i);
+
+                    			if (mBomber.getHeart() < 3) {
+                        			mBomber.setHeart(mBomber.getHeart() + 1);
+                   			 }
+
+                    				break;
+               			 }
 
 			}
 		}
