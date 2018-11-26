@@ -1,6 +1,6 @@
 180:405:4:/Images/portal.png
-90:495:5:/Images/heart.png
-450:135:5:/Images/heart.png
+90:495:5:/Images/Heart.png
+450:135:5:/Images/Heart.png
 495:360:3:/Images/item_shoe.jpg
 495:405:3:/Images/item_shoe.jpg
 90:450:1:/Images/item_bomb.png
