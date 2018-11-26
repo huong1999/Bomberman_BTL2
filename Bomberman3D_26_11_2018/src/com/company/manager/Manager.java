@@ -1,4 +1,4 @@
-package com.company.manager;
+// package com.company.manager;
 
 import java.awt.Image;
 import java.awt.Color;
@@ -459,13 +459,13 @@ public class Manager {
 			}
 		}
 		
-		for (int i = 0; i < arrBombBang.size(); i++) {
-			for (int j = 0; j < arrItem.size(); j++) {
-				if (arrBombBang.get(i).isImpactBombBangvsItem(arrItem.get(j))) {
-					arrItem.remove(j);
-				}
-			}
-		}
+// 		for (int i = 0; i < arrBombBang.size(); i++) {
+// 			for (int j = 0; j < arrItem.size(); j++) {
+// 				if (arrBombBang.get(i).isImpactBombBangvsItem(arrItem.get(j))) {
+// 					arrItem.remove(j);
+// 				}
+// 			}
+// 		}
 		
 	}
 
