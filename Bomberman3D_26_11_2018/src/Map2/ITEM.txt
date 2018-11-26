@@ -1,7 +1,8 @@
-0:0:4:/Images/portal.png
-360:45:1:/Images/item_bomb.png
-405:540:1:/Images/item_bomb.png
-225:540:2:/Images/item_bombsize.png
-585:225:2:/Images/item_bombsize.png
-585:405:3:/Images/item_shoe.png
-270:495:3:/Images/item_shoe.png
+450:270:4:/Images/portal.png
+315:180:5:/Images/heart.png
+315:495:5:/Images/heart.png
+405:45:3:/Images/item_shoe.jpg
+180:270:1:/Images/item_bomb.png
+315:405:6:/Images/skull.jpg
+315:450:6:/Images/skull.jpg
+315:360:2:/Images/item_bombsize.png
