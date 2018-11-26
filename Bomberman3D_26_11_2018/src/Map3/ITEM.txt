@@ -1,9 +1,9 @@
 315:45:4:/Images/portal.png
-90:90:5:/Images/heart.png
-540:90:5:/Images/heart.png
-180:540:5:/Images/heart.png
-360:540:5:/Images/heart.png
-315:405:5:/Images/heart.png
+90:90:5:/Images/Heart.png
+540:90:5:/Images/Heart.png
+180:540:5:/Images/Heart.png
+360:540:5:/Images/Heart.png
+315:405:5:/Images/Heart.png
 405:540:3:/Images/item_shoe.jpg
 360:495:3:/Images/item_shoe.jpg
 90:360:1:/Images/item_bomb.png
