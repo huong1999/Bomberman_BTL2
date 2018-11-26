@@ -1,4 +1,4 @@
-// package com.company.manager;
+package com.company.manager;
 
 import java.awt.Image;
 import java.awt.Color;
@@ -24,9 +24,11 @@ public class Manager {
 	private Random random = new Random();
 	private Bomber mBomber;
 	private ArrayList<Box> arrBox;
+	private ArrayList<Box> arrShawDow;
 	private ArrayList<Bomb> arrBomb;
 	private ArrayList<BombBang> arrBombBang;
 	private ArrayList<Sprite> arrSprite;
+//	private ArrayList<Sprite> arrPirate;
 	private ArrayList<Item> arrItem;
 	private ArrayList<HightScore> arrHightScore;
 	private String Background;
@@ -42,19 +44,24 @@ public class Manager {
 		switch (level) {
 			case 1:
 				mBomber = new Bomber(315, 495, Actor.BOMBER, Actor.DOWN, 5, 1, 1);
-				innit("src/Map1/BOX.txt", "src/Map1/MONSTER.txt", "src/Map1/ITEM.txt");
+				innit("src/Map1/BOX.txt",
+						"src/Map1/MONSTER.txt",
+						"src/Map1/ITEM.txt");
 				nextRound = 0;
 				status = 0;
 				break;
 			case 2:
 				mBomber.setNewStatusBomber(315, 270);
-				innit("src/Map2/BOX.txt", "src/Map2/MONSTER.txt", "src/Map2/ITEM.txt");
+				innit("src/Map2/BOX.txt",
+						"src/Map2/MONSTER.txt", "src/Map2/ITEM.txt");
 				nextRound = 0;
 				status = 0;
 				break;
 			case 3:
-				mBomber.setNewStatusBomber(315, 495);
-				innit("src/Map3/BOX.txt", "src/Map3/MONSTER.txt", "src/Map3/ITEM.txt");
+				mBomber.setNewStatusBomber(0, 540);
+				innit("src/Map3/BOX.txt",
+						"src/Map3/MONSTER.txt",
+						"src/Map3/ITEM.txt");
 				nextRound = 0;
 				status = 0;
 				break;
@@ -390,7 +397,35 @@ public class Manager {
                  return false;
            
         }
-
+//	public void checkImpactItem() {
+//		for (int i = 0; i < arrItem.size(); i++) {
+//			if (arrItem.get(i).isImpactItemVsBomber(mBomber)) {
+//				GameSound.instance.getAudio(GameSound.ITEM).play();
+//				if (arrItem.get(i).getType() == Item.Item_Bomb) {
+//					mBomber.setQuantityBomb(mBomber.getQuantityBomb() + 1);
+//					arrItem.remove(i);
+//					break;
+//				}
+//				if (arrItem.get(i).getType() == Item.Item_BombSize) {
+//					mBomber.setSizeBomb(mBomber.getSizeBomb() + 1);
+//					arrItem.remove(i);
+//					break;
+//				}
+//				if (arrItem.get(i).getType() == Item.Item_Shoe) {
+//					mBomber.setSpeed(mBomber.getSpeed() - 1);
+//					arrItem.remove(i);
+//					break;
+//				}
+//				/*//logic portal
+//				if (arrItem.get(i).getType() == Item.Item_Portal) {
+//					//mBomber.setSpeed(mBomber.getSpeed() - 1);
+//					arrItem.remove(i);
+//					break;
+//				}
+//				*/
+//			}
+//		}
+//	}
 
 	public void deadLineAllBomb() {
 		for (int i = 0; i < arrBomb.size(); i++) {
@@ -459,13 +494,13 @@ public class Manager {
 			}
 		}
 		
-// 		for (int i = 0; i < arrBombBang.size(); i++) {
-// 			for (int j = 0; j < arrItem.size(); j++) {
-// 				if (arrBombBang.get(i).isImpactBombBangvsItem(arrItem.get(j))) {
-// 					arrItem.remove(j);
-// 				}
-// 			}
-// 		}
+		for (int i = 0; i < arrBombBang.size(); i++) {
+			for (int j = 0; j < arrItem.size(); j++) {
+				if (arrBombBang.get(i).isImpactBombBangvsItem(arrItem.get(j)) && arrItem.get(j).getType()== 6 ) {
+					arrItem.remove(j);
+				}
+			}
+		}
 		
 	}
 
